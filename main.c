@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 
-#define M_PI_180 0.01745329251994329576923690768489
+#define M_PI_180 0.01745329251994329576923690768489 /* (M_PI / 180.0) */
+#define M_1_PI_180 57.295779513082320876798154814105 /* (180.0 / M_PI) */
 
 void find_potential_diff();
+void find_particle_mass();
+void find_distance();
+void find_particle_charge();
+void find_gravity();
+void find_angle();
 
 int main(void) {
   printf(
@@ -21,7 +27,7 @@ int main(void) {
     "\n"
     " 0. Sair.\n"
     " 1. Encontrar a Diferença de Potencial (DDP).\n"
-    " 2. Encontrar a massa da carga.\n"
+    " 2. Encontrar a massa da partícula.\n"
     " 3. Encontrar a distância das placas paralelas.\n"
     " 4. Encontrar a carga da partícula.\n"
     " 5. Encontrar a gravidade.\n"
@@ -42,6 +48,21 @@ int main(void) {
       case 1:
         find_potential_diff();
         break;
+      case 2:
+        find_particle_mass();
+        break;
+      case 3:
+        find_distance();
+        break;
+      case 4:
+        find_particle_charge();
+        break;
+      case 5:
+        find_gravity();
+        break;
+      case 6:
+        find_angle();
+        break;
       default:
         printf("Código de Operação Inválido.\n");
         break;
@@ -53,7 +74,7 @@ int main(void) {
   return 0;
 }
 
-/* Essa função irá requisitar da entrada padrão as informações de massa, gravidade, distância entre placas paralelas, ângulo da partícula com a vertical a carga da partícula é irá fornecer a diferença de potencial necessária para isso. */
+/* Essa função irá requisitar da entrada padrão as informações de massa, gravidade, distância entre placas paralelas, ângulo da partícula com a vertical a carga da partícula e irá fornecer a diferença de potencial necessária para isso. */
 void find_potential_diff() {
   long double mass;
   long double gravity;
@@ -85,12 +106,218 @@ void find_potential_diff() {
   printf(
     "\n"
     " A diferença de potencial necessária para uma partícula\n"
-    " da partícula %.4Lfkg em uma gravidade local de %.4Lfm/s^2,\n"
+    " de massa %.4Lfkg em uma gravidade local de %.4Lfm/s^2,\n"
     " uma distância entre as placas de %.4Lfm com um ângulo com\n"
     " a vertical de %.4Lf° e com carga %.4LeC será de\n"
     "\n"
     " Diferença de Potencial: %.4LfV\n"
     "\n",
-    mass, gravity, dist, angle * (1.0 / M_PI_180), charge, pdiff
+    mass, gravity, dist, angle * M_1_PI_180, charge, pdiff
+  );
+}
+
+/* Essa função irá requisitar da entrada padrão as informações de gravidade, distância entre placas paralelas, ângulo da partícula com a vertical, carga da partícula e diferença de potencal e irá fornecer a massa da partícula para isso. */
+void find_particle_mass() {
+  long double gravity;
+  long double dist;
+  long double angle;
+  long double charge;
+  long double pdiff;
+  long double mass;
+
+  printf("Insira a gravidade (m/s^2): ");
+  scanf("%Lf", &gravity);
+  
+  printf("Insira a distância entre as placas paralelas (m): ");
+  scanf("%Lf", &dist);
+
+  printf("Insira o ângulo entre a partícula e a vertical (graus): ");
+  scanf("%Lf", &angle);
+
+  printf("Insira a carga da partícula (C): ");
+  scanf("%Lf", &charge);
+  
+  printf("Insira a diferença de potencial (V): ");
+  scanf("%Lf", &pdiff);
+
+  /* Transforma o ângulo em radianos. */
+  angle *= M_PI_180;
+
+  mass = charge * pdiff / (gravity * dist * tan(angle));
+  
+  printf(
+    "\n"
+    " A massa da partícula necessária para uma gravidade\n"
+    " local de %.4Lfm/s^2, uma distância entre as placas de %.4Lfm\n"
+    " com um ângulo com a vertical de %.4Lf°, com carga %.4LeC e com\n"
+    " uma diferença de potencial de %.4Lf será de \n"
+    "\n"
+    " Massa da Partícula: %.4Lfkg\n"
+    "\n",
+    gravity, dist, angle * M_1_PI_180, charge, pdiff, mass
+  );
+}
+
+/* Essa função irá requisitar da entrada padrão as informações de massa da partícula, gravidade, ângulo da partícula com a vertical, carga da partícula e diferença de potencal e irá fornecer a distância entre as placas paralelas para isso. */
+void find_distance() {
+  long double mass;
+  long double gravity;
+  long double angle;
+  long double charge;
+  long double pdiff;
+  long double dist;
+
+  printf("Insira a massa da partícula (kg): ");
+  scanf("%Lf", &mass);
+
+  printf("Insira a gravidade (m/s^2): ");
+  scanf("%Lf", &gravity);
+  
+  printf("Insira o ângulo entre a partícula e a vertical (graus): ");
+  scanf("%Lf", &angle);
+
+  printf("Insira a carga da partícula (C): ");
+  scanf("%Lf", &charge);
+    
+  printf("Insira a diferença de potencial (V): ");
+  scanf("%Lf", &pdiff);
+
+  /* Transforma o ângulo em radianos. */
+  angle *= M_PI_180;
+
+  dist = charge * pdiff / (gravity * mass * tan(angle));
+
+  printf(
+    "\n"
+    " A distância das placas paralelas necessária para uma partícula\n"
+    " de massa %.4Lfkg, gravidade local de %.4Lfm/s^2, ângulo com a vertical\n"
+    " de %.4Lf°, com carga %.4LeC e com uma diferença de potencial %.4LfV será de\n"
+    "\n"
+    " Distância entre as placas paralelas: %.4Lfm\n"
+    "\n",
+    mass, gravity, angle * M_1_PI_180, charge, pdiff, dist    
+  );
+}
+
+/* Essa função irá requisitar da entrada padrão as informações de massa da partícula, gravidade, ângulo da partícula com a vertical, distância entre as placas paralelas e diferença de potencal e irá fornecer a carga da partícula para isso. */
+void find_particle_charge() {
+  long double mass;
+  long double gravity;
+  long double dist;
+  long double angle;
+  long double pdiff;
+  long double charge;
+
+  printf("Insira a massa da partícula (kg): ");
+  scanf("%Lf", &mass);
+
+  printf("Insira a gravidade (m/s^2): ");
+  scanf("%Lf", &gravity);
+  
+  printf("Insira o ângulo entre a partícula e a vertical (graus): ");
+  scanf("%Lf", &angle);
+
+  printf("Insira a distância entre as placas paralelas (m): ");
+  scanf("%Lf", &dist);
+
+  printf("Insira a diferença de potencial (V): ");
+  scanf("%Lf", &pdiff);
+
+  /* Transforma o ângulo em radianos. */
+  angle *= M_PI_180;
+
+  charge = mass * gravity * dist * tan(angle) / pdiff;
+
+  printf(
+    "\n"
+    " A carga da partícula necessária para uma partícula de massa\n"
+    " %.4Lfkg, gravidade local de %.4Lfm/s^2, angulo com a vertical %.4Lf°,\n"
+    " distância entre as placas paralelas de %.4Lfm e com uma diferença de\n"
+    " potencial de %.4LfV será de\n"
+    "\n"
+    " Carga da Partícula: %.4LeC"
+    "\n",
+    mass, gravity, angle * M_1_PI_180, dist, pdiff, charge
+  );
+
+}
+
+/* Essa função irá requisitar da entrada padrão as informações de massa da partícula, carga da partícula, ângulo da partícula com a vertical, distância entre as placas paralelas e diferença de potencal e irá fornecer a gravidade local para isso. */
+void find_gravity() {
+  long double mass;
+  long double dist;
+  long double angle;
+  long double charge;
+  long double pdiff;
+  long double gravity;
+
+  printf("Insira a massa da partícula (kg): ");
+  scanf("%Lf", &mass);
+
+  printf("Insira o ângulo entre a partícula e a vertical (graus): ");
+  scanf("%Lf", &angle);
+
+  printf("Insira a distância entre as placas paralelas (m): ");
+  scanf("%Lf", &dist);
+
+  printf("Insira a carga da partícula (C): ");
+  scanf("%Lf", &charge);
+
+  printf("Insira a diferença de potencial (V): ");
+  scanf("%Lf", &pdiff);
+
+  /* Transforma o ângulo em radianos. */
+  angle *= M_PI_180;
+
+  gravity = charge * pdiff / (mass * dist * tan(angle));
+
+  printf(
+    "\n"
+    " A gravidade local necessária para uma partícula de massa\n"
+    " %.4Lfkg, angulo com a vertical %.4Lf°, distância entre as placas\n"
+    " paralelas de %.4Lfm, com uma carga de %.4LeC e diferença de potencial\n"
+    " de %.4LfV será de\n"
+    "\n"
+    " Gravidade Local: %.4Lfm/s^2"
+    "\n",
+    mass, angle * M_1_PI_180, dist, charge, pdiff, gravity
+  );
+}
+
+/* Essa função irá requisitar da entrada padrão as informações de massa da partícula, gravidade, carga da partícula, distância entre as placas paralelas e diferença de potencal e irá fornecer a ângulo da partícula com a vertical para isso. */
+void find_angle() {
+  long double mass;
+  long double gravity;
+  long double dist;
+  long double charge;
+  long double pdiff;
+  long double angle;
+
+  printf("Insira a massa da partícula (kg): ");
+  scanf("%Lf", &mass);
+
+  printf("Insira a gravidade (m/s^2): ");
+  scanf("%Lf", &gravity);
+
+  printf("Insira a distância entre as placas paralelas (m): ");
+  scanf("%Lf", &dist);
+
+  printf("Insira a carga da partícula (C): ");
+  scanf("%Lf", &charge);
+
+  printf("Insira a diferença de potencial (V): ");
+  scanf("%Lf", &pdiff);
+
+  angle = atan((charge * pdiff) / (mass * gravity * dist));
+
+  printf(
+    "\n"
+    " O ângulo necessário para uma partícula de massa %.4Lfkg\n"
+    " em uma gravidade de %.4Lfm/s^2, distância entre as placas paralelas\n"
+    " de %.4Lfm, com uma carga de %.4LeC e diferença de potencial %.4LfV\n"
+    " será de\n"
+    "\n"
+    " Ângulo: %.4Lf°",
+    mass, gravity, dist, charge, pdiff, angle * M_1_PI_180
   );
 }
