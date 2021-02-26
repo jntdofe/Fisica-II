@@ -1,0 +1,39 @@
+Primeiramente, devemos introduzir qual é o objetivo principal do uso do osciloscópio, o qual é, ver graficamente
+como a tensão em um circuito varia com o tempo e a forma da onda, tendo qualquer tipo de circuito AC/DC e, que na
+maiora das vezes são medidos sinais periódicos, tais que esses possuem alguns atributos a mais, como frequência,
+período, amplitude, fase e comprimento de onda.
+ * Tal que a frequência representa a quantidade de vezes que a onda se repete por segundo, ou seja, a quantidade
+ de ciclos por segundo.
+ * O período que é represetado pelo inverso da frequência, representa o tempo necessário para que a onda se repita, ou seja, o tempo para a onda completar um ciclo.
+ * A amplitude representa o valor máximo que uma onda pode obter.
+   * Em relação as amplitudes, também podemos citar a Tensão de Pico que representa a tensão máxima, também temos a 
+   Tensão de Pico a Pico e a Tensão RMS que representa a Tensão de Pico dividido pela raiz de 2.
+ * A fase representa o valor inicial que a onda tem.
+ * O comprimento de onda (lambda) representa a distância entre dois pontos que são repetidos, por exemplo, distância entre dois picos da onda.
+
+  Na seção vertical do osciloscópio, temos dois botões de rolagem principal, tais que são o botão de rolagem de *posição*
+e *scale*. O primeiro é utilizado para transladar o gráfico da tensão na vertical. Enquanto, que o segundo é utilizado
+para definir a escala, ou seja, a quantidade de volts que cada *quadrado* na interface representa verticalmente.
+  Ambos botões são de extrema importância, pois, conseguimos analisar uma gama extensa de gráficos de tensões somente
+transladando o gráfico da tensão e mudando sua escala e, também para fazer comparações entre dois gráficos de tensões e para traçar referências.
+
+  Na seção horizontal do osciloscópio, temos dois botões de rolagem principal, tais que são o botão de rolagem de 
+*posição* e *scale*, tem as mesmas funções daquele que é utilizado na seção vertical, porém, agora estamos modificando 
+não a tensão, mas, sim o intervalo de tempo que cada *quadrado* representa na horizontal.
+
+  Na seção Trigger, este é utilizado para estatizar a forma de onda na interface do osciloscópio, pois, caso contrário,
+a onda estaria sofrendo algumas transladações na horizontal e algumas distorções que dificultaria a analise dessa 
+tensão. O trigger é feito manualmente, mas, alguns osciloscópios modernos possui o Auto-Trigger que é feito por um 
+botão acima da seção do Trigger escrito *AUTO*. Ainda, pode-se utilizar um trigger externo para estatizar a onda.
+
+  No osciloscópio há um botão escrito *CH* que representa canal. Pode-se fazer o uso desse botão para mudar o 
+acoplamento do osciloscópio para _DC_, _AC_ ou _GND_, que são corrente contínua, alternada ou aterramento, 
+respectivamente. Estas opções são usadas para que o osciloscópio filtre somente aquele tipo de corrente o que 
+facilita a análise do gráfico da tensão.
+
+  Há ainda o botão de *CURSOR* que é utilizado para criar barras verticais ou horizontais para demarcar a tensão ou o 
+tempo, respectivamente e calcular diferenças de tensões e intervalos de tempo de maneira mais precisa, ao invés de 
+contar os quadrados que estão na interface do osciloscópio.
+
+  Para encontrar todas as informações da tensão medida de modo preciso, podemos utilizar o botão *MEASURE* que abre uma
+interface contendo as informações principais sobre aquela tensão como, período, amplitude, tempo de subida, etc.

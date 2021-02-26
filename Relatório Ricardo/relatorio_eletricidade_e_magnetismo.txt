@@ -1,0 +1,42 @@
+Primeiramente, devemos introduzir quais serão os equipamentos que serão utilizados para fazer as medições, tais que são
+principalmente o multimetro e uam fonte de tensão e, também, para cada diferente experimento serão utilizados diferentes 
+componentes elétricos.
+
+Segundamente, devemos introduzir as equações que serão utilizadas nos experimentos e para a análise dos dados adquiridos.
+ * A primeira equação importante é a Primeira Lei de Ohm: I = V/R, tal que:
+   - I: Representa a corrente elétrica (A)
+   - V: Representa a diferença de potencial (V)
+   - R: Representa a resistência (Ohm)
+ * A segunda equação importante é a Segunda Lei dee Ohm: R = `rho`L/A, tal que:
+   - `rho`: Representa a resistividade (Ohm m)
+   - L: Representa o comprimento do fio (m)
+   - A: Representa a área da seção transversal do fio (m^2)
+Ainda temos que nos metais a resistividade aumenta linearmente com a temperatura, podendo ser dado pela equação
+`pho`(T) = `pho`(T_o) * (1 + `alpha`(T - T_o)). Embora, a resistivadade dos metais aumenta com a temperatura temos que
+os metais são bons condutores de eletricidade, ou seja, possuem baixa resistência. Entretanto, ainda temos materiais isolantes que são aqueles que possuem alta resistência elétrica.
+
+Ainda, podemos caracterizar um dispositivo como sendo Ohmico ou Não-Ohmicos. Aqueles dispositivos ohmicos são queles que 
+varia linearmente com a Primeira Lei de Ohm (ou seja, tem um gráfico linear), os não-ohmicos são aqueles dispositivos
+que não variam de forma linear.
+ 
+Um dos principais componentes ohmicos é o resistores tal que R que representa a resistência é o coeficiente de 
+proporcionalidade entre a tensão e a corrente. Existem ainda, os resistores fixos, ou seja, que possuem a resistência 
+fixa e os resistores variáveis (potenciômetros). E inversamente, temos que o exemplo de um dispotivo não ohmico é a 
+lâmpada incandescente que pode ser utilizada para fazer uma medição da intensidade da corrente elétrica, pois, quanto 
+maior a intensidade da corrente elétrica maior o brilho da lâmpada.
+
+Vemos que na medição da resistência de dois resistores no vídeo, temos que o primeiro resistor tem uma menor resistência
+pois uma baixa tensão incidente foi capaz de gerar uma corrente elétrica considerável. Enquanto, que no segundo 
+resistor uma tensão ainda maior não foi suficiente para gerar a mesma corrente elétrica que o anterior, caracterizando 
+a maior resistência elétrica.
+
+Experimentos:
+ Primeiro Experimento:
+	* Vemos neste experimento que ao girar no sentido horário o potenciômetro, há um aumento da resistência naquele 
+	ramo causando a redução de corrente elétrica no mesmo, o que causa a redução de brilho da lâmpada. Inversamente, 
+	temos que a medida que gira-se no sentido anti-horário o potenciômetro, há uma redução da resistência e, portanto, 
+	um aumento na corrente elétrica, pois, visivelmente temos que o brilho da lâmpada aumenta.
+  Segundo Experimento:
+    * Vemos que no segundo experimento temos o ramo à eesquerda composto por uma lâmpada e uma resistência no segundo 
+	ramo uma lampada e um potenciômetro, temos quando ambas lâmpadas têm mesmo brilho, então o potenciômetro tem a 
+	mesma resistência que o resistor do ramo à esquerda.

@@ -1,0 +1,18 @@
+Primeiramente começe citando qual será o experimento realizado, tal que neste caso será o experimento
+tomando como base um Circuito RC, ou seja, que contém resistor capacitor e, iremos analisar como a carga
+do capacitor varia com o tempo no momento de carga do capacitor e como a tensão no capacitor varia com o tempo
+no momento de descarga do capacitor, fazendo as comparações entre esses tempos quando utilizados os dois resistores
+diferentes. (Podemos chamar isso de Resumo)
+
+Segundo, introduziremos as equações que serão utilizadas para as medições e as provas necessárias que foram pedidas no roteiro experimental do vídeo.
+
+Terceiro, informaremos quais serão os instrumentos necessários para o experimento, sendo estes,
+ - 1 Placa de montagem para montar o circuito.
+ - 1 Capacitor eletrolítico (470 microF).
+ - 2 Resistores (com resistências diferentes), o primeiro com 10kOhm e o segundo com 1kOhm. 
+ - Cabos para ligação do circuito.
+ - 1 Fonte de Tensão (regulada em 7V).
+ - 1 Software de aquisição de dados.
+ - 1 Sensor que funciona como voltímetro.
+
+Quarto, após os experimentos e com as informações já obtidas, fazeremos as comparações necessárias que foram pedidas no vídeo, que no caso é comparar a constante `C` dada pelo programa de aquisição de dados com o tempo capacitivo (t = RC) para cada uma das resistências utilizadas.
