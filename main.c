@@ -33,7 +33,7 @@ int main(void) {
     " 5. Encontrar a gravidade.\n"
     " 6. Encontrar o ângulo.\n"
     "\n"
-  );
+  ); 
   
   unsigned int opcode;
 
@@ -70,7 +70,6 @@ int main(void) {
 
   } while (opcode != 0);
 
-
   return 0;
 }
 
@@ -86,11 +85,26 @@ void find_potential_diff() {
   printf("Insira a massa da partícula (kg): ");
   scanf("%Lf", &mass);
 
+  if (mass < 0) {
+      printf("Você não pode inserir uma massa negativa.\n");
+      return;
+  }
+
   printf("Insira a gravidade (m/s^2): ");
   scanf("%Lf", &gravity);
-  
+
+  if (gravity < 0) { 
+    printf("Você não pode inserir uma gravidade negativa");
+    return;
+  }
+
   printf("Insira a distância entre as placas paralelas (m): ");
   scanf("%Lf", &dist);
+
+  if (dist < 0) {
+    printf("Você não pode colocar uma distância entre as placas paralelas negativa.");
+    return;
+  }
 
   printf("Insira o ângulo entre a partícula e a vertical (graus): ");
   scanf("%Lf", &angle);
@@ -127,9 +141,19 @@ void find_particle_mass() {
 
   printf("Insira a gravidade (m/s^2): ");
   scanf("%Lf", &gravity);
-  
+
+  if (gravity < 0) { 
+    printf("Você não pode inserir uma gravidade negativa");
+    return;
+  }
+
   printf("Insira a distância entre as placas paralelas (m): ");
   scanf("%Lf", &dist);
+
+  if (dist < 0) {
+    printf("Você não pode colocar uma distância entre as placas paralelas negativa.");
+    return;
+  }
 
   printf("Insira o ângulo entre a partícula e a vertical (graus): ");
   scanf("%Lf", &angle);
@@ -170,8 +194,18 @@ void find_distance() {
   printf("Insira a massa da partícula (kg): ");
   scanf("%Lf", &mass);
 
+  if (mass < 0) {
+      printf("Você não pode inserir uma massa negativa.\n");
+      return;
+  }
+
   printf("Insira a gravidade (m/s^2): ");
   scanf("%Lf", &gravity);
+
+  if (gravity < 0) { 
+    printf("Você não pode inserir uma gravidade negativa");
+    return;
+  }
   
   printf("Insira o ângulo entre a partícula e a vertical (graus): ");
   scanf("%Lf", &angle);
@@ -211,14 +245,29 @@ void find_particle_charge() {
   printf("Insira a massa da partícula (kg): ");
   scanf("%Lf", &mass);
 
+  if (mass < 0) {
+      printf("Você não pode inserir uma massa negativa.\n");
+      return;
+  }
+
   printf("Insira a gravidade (m/s^2): ");
   scanf("%Lf", &gravity);
+
+  if (gravity < 0) { 
+    printf("Você não pode inserir uma gravidade negativa");
+    return;
+  }
   
   printf("Insira o ângulo entre a partícula e a vertical (graus): ");
   scanf("%Lf", &angle);
 
   printf("Insira a distância entre as placas paralelas (m): ");
   scanf("%Lf", &dist);
+
+  if (dist < 0) {
+    printf("Você não pode colocar uma distância entre as placas paralelas negativa.");
+    return;
+  }
 
   printf("Insira a diferença de potencial (V): ");
   scanf("%Lf", &pdiff);
@@ -254,11 +303,21 @@ void find_gravity() {
   printf("Insira a massa da partícula (kg): ");
   scanf("%Lf", &mass);
 
+  if (mass < 0) {
+      printf("Você não pode inserir uma massa negativa.\n");
+      return;
+  }
+
   printf("Insira o ângulo entre a partícula e a vertical (graus): ");
   scanf("%Lf", &angle);
 
   printf("Insira a distância entre as placas paralelas (m): ");
   scanf("%Lf", &dist);
+
+  if (dist < 0) {
+    printf("Você não pode colocar uma distância entre as placas paralelas negativa.");
+    return;
+  }
 
   printf("Insira a carga da partícula (C): ");
   scanf("%Lf", &charge);
@@ -296,11 +355,26 @@ void find_angle() {
   printf("Insira a massa da partícula (kg): ");
   scanf("%Lf", &mass);
 
+  if (mass < 0) {
+      printf("Você não pode inserir uma massa negativa.\n");
+      return;
+  }
+
   printf("Insira a gravidade (m/s^2): ");
   scanf("%Lf", &gravity);
 
+  if (gravity < 0) { 
+    printf("Você não pode inserir uma gravidade negativa");
+    return;
+  }
+
   printf("Insira a distância entre as placas paralelas (m): ");
   scanf("%Lf", &dist);
+
+  if (dist < 0) {
+    printf("Você não pode colocar uma distância entre as placas paralelas negativa.");
+    return;
+  }
 
   printf("Insira a carga da partícula (C): ");
   scanf("%Lf", &charge);
@@ -317,7 +391,8 @@ void find_angle() {
     " de %.4Lfm, com uma carga de %.4LeC e diferença de potencial %.4LfV\n"
     " será de\n"
     "\n"
-    " Ângulo: %.4Lf°",
+    " Ângulo: %.4Lf°\n"
+    "\n",
     mass, gravity, dist, charge, pdiff, angle * M_1_PI_180
   );
 }
